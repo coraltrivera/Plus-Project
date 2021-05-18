@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/db070bd490.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Saturday 5/1/21 4:04pm
+        </h1>
+        <form class="new-search" id="search-form">
+            <input type="search" placeholder="Enter City or Zip Code" autocomplete="on" id="city-input">
+            <button class="new-search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <h2 id="city">
+
+        </h2>
+        <h3>
+            <span id="temp">
+            
+            </span><span id="units">°F |</span>
+            <span id="condition">
+            
+            </span>
+        </h3>
+        <h4>
+            H: <span id="high">63</span>° L: <span id="low">45</span>°
+        </h4>
+        <br>
+        <div class="row">
+            <div class="col">
+                Thursday <br>
+                <i class="fas fa-cloud-sun"></i><br>
+                66°F
+            </div>
+            <div class="col">
+                Friday<br>
+             <br>
+                68°F
+            </div>
+            <div class="col">
+                Saturday<br>
+                <i class="fas fa-sun"></i> <br>
+                66°F
+            </div>
+            <div class="col">
+                Sunday<br>
+                <i class="fas fa-sun"></i> <br>
+                64°F
+            </div>
+            <div class="col">
+                Monday<br>
+                <i class="fas fa-sun"></i> <br>
+                66°F
+            </div>
+            <div class="col">
+                Tuesday<br>
+                <i class="fas fa-sun"></i> <br>
+                68°F
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

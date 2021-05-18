@@ -1,0 +1,104 @@
+body {
+  background-color: rgb(113, 149, 178);
+  background-image: url(images/map2v2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: block;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(50, 50, 50);
+}
+
+h1 {
+  color: rgb(226, 222, 222);
+  font-size: 25px;
+  padding-right: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+h2 {
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+h3,
+h4 {
+  font-size: 23px;
+  word-spacing: 7px;
+  line-height: 35px;
+}
+
+.home input {
+  border: 1px solid rgb(197, 196, 196);
+  border-radius: 20px;
+  margin-top: 250px;
+  max-width: 100%;
+  padding: 10px 150px;
+  text-align: inherit;
+}
+
+input::placeholder {
+  overflow: visible;
+}
+
+.container {
+  background: rgba(300, 300, 300, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  margin-top: 100px;
+  max-width: 800px;
+  padding: 15px;
+  position: relative;
+}
+
+.new-search {
+  display: flex;
+  left: 20px;
+  position: fixed;
+  top: 0;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+.new-search input {
+  background: transparent;
+  border: none;
+
+  text-align: inherit;
+}
+
+.new-search input:focus,
+.home input:focus {
+  outline: 0;
+}
+
+.new-search ::placeholder {
+  color: rgb(50, 50, 50);
+  padding: 5px;
+}
+
+.new-search-button {
+  border: none;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.col {
+  font-size: 18px;
+}
+
+#c-link,
+#f-link {
+  text-decoration: none;
+  color: brown;
+}
+
+#condition {
+  text-transform: capitalize;
+}
