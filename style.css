@@ -31,6 +31,23 @@ h4 {
   line-height: 35px;
 }
 
+small {
+  color: white;
+  display: flex;
+  font-weight: 300;
+  left: 540px;
+  top: 45px;
+  position: relative;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: red;
+}
+
 .home input {
   border: 1px solid rgb(197, 196, 196);
   border-radius: 20px;
