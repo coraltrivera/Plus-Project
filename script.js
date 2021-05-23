@@ -30,6 +30,8 @@ function displayWeatherCondition(response){
     document.querySelector("#condition").innerHTML = response.data.weather[0].main;
     document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_max);
     document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
+    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 }
 
 function userCitySearch(event) {
@@ -41,4 +43,4 @@ function userCitySearch(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", userCitySearch);
 
-search("New Jersey");
+search("New York");
