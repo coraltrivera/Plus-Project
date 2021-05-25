@@ -41,11 +41,11 @@ small {
   position: relative;
 }
 
-a {
+#bottom-link {
   color: white;
 }
 
-a:hover {
+#bottom-link:hover {
   color: red;
 }
 
@@ -118,8 +118,13 @@ img {
 
 #c-link,
 #f-link {
+  color: rgb(50, 50, 50);
   text-decoration: none;
-  color: brown;
+}
+
+#c-link:hover,
+#f-link:hover {
+  color: white;
 }
 
 #condition {

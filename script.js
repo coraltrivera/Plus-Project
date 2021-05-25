@@ -45,3 +45,33 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", userCitySearch);
 
 search("New York");
+
+function convertToCelcius(event){
+    event.preventDefault();
+    let tempElement = document.querySelector("#temp");
+    let temp = tempElement.innerHTML;
+    tempElement.innerHTML = Math.round((temp - 32) * 5/9);
+    let highElementC = document.querySelector("#high");
+    let highC = highElementC.innerHTML;
+    highElementC.innerHTML = Math.round((highC - 32) * 5/9);
+    let lowElementC = document.querySelector("#low");
+    let lowC = lowElementC.innerHTML;
+    lowElementC.innerHTML = Math.round((lowC - 32) * 5/9);
+}
+let celcius = document.querySelector ("#c-link");
+celcius.addEventListener("click", convertToCelcius)
+
+function convertToFahrenheit(event){
+    event.preventDefault();
+    let tempElement = document.querySelector("#temp");
+    let temp = tempElement.innerHTML;
+    tempElement.innerHTML = Math.round((temp * 9) / 5 + 32); 
+    let highElementF = document.querySelector("#high");
+    let highF = highElementF.innerHTML;
+    highElementF.innerHTML = Math.round((highF * 9) / 5 + 32);
+    let lowElementF = document.querySelector("#low");
+    let lowF = lowElementF.innerHTML;
+    lowElementF.innerHTML = Math.round((lowF * 9) / 5 + 32);
+}
+let fahrenheit = document.querySelector ("#f-link");
+fahrenheit.addEventListener("click", convertToFahrenheit)
