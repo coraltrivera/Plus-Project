@@ -34,7 +34,7 @@ function formatDate(timestamp){
   let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  return `${day} ${month} ${fecha}, ${hours}:${minutes}, ${year}`;
+  return ` Last Updated ${day} ${month} ${fecha}, ${hours}:${minutes}, ${year}`;
 
 }
 
