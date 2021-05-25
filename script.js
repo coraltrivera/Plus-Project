@@ -16,10 +16,25 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 let month = months[now.getMonth()];
 h1.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
 
+
 function search(city){  
     let apiKey = "cd5e89045eaf1b6a2be7acb80a47437f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayWeatherCondition)
+
+}
+
+function formatDate(timestamp){
+  let date = new Date(timestamp);
+  let fecha = date.getDate();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
+  return `${day} ${month} ${fecha}, ${hours}:${minutes}, ${year}`;
 
 }
 
@@ -32,7 +47,8 @@ function displayWeatherCondition(response){
     document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000)
   }
 
 function userCitySearch(event) {
