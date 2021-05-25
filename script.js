@@ -27,12 +27,13 @@ function displayWeatherCondition(response){
     console.log(response.data);
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
-    document.querySelector("#condition").innerHTML = response.data.weather[0].main;
+    document.querySelector("#condition").innerHTML = response.data.weather[0].description;
     document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_max);
     document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-}
+    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  }
 
 function userCitySearch(event) {
   event.preventDefault();

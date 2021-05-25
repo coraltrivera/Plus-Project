@@ -15,8 +15,7 @@
 
 <body>
     <div class="container">
-        <h1>
-            Saturday 5/1/21 4:04pm
+        <h1 id="date">
         </h1>
         <form class="new-search" id="search-form">
             <input type="search" placeholder="Enter City or Zip Code" autocomplete="on" id="city-input">
@@ -31,7 +30,7 @@
             <span id="temp">
             
             </span><span id="units">°F |</span>
-            <span id="condition">
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" id="icon"><span id="condition">
             
             </span>
         </h3>
@@ -39,19 +38,29 @@
             H: <span id="high"></span>° L: <span id="low"></span>°
         </h4>
         <h5>
-            Humidity: <span id="humidity"></span>% | Precipitation: <span></span>% | Wind: <span id="wind"></span> Km/H
+            Humidity: <span id="humidity"></span>% | Precipitation: <span id="precipitation"></span>% | Wind: <span id="wind"></span> Km/H
         </h5>
         <br>
         <div class="row">
             <div class="col">
-                Thursday <br>
+                Tuesday <br>
                 <i class="fas fa-cloud-sun"></i><br>
                 66°F
             </div>
             <div class="col">
-                Friday<br>
-             <br>
+                Wednesday<br>
+                <i class="fas fa-cloud-sun"></i><br>
                 68°F
+            </div>
+            <div class="col">
+                Thursday<br>
+                <i class="fas fa-sun"></i> <br>
+                66°F
+            </div>
+            <div class="col">
+                Friday<br>
+                <i class="fas fa-sun"></i> <br>
+                64°F
             </div>
             <div class="col">
                 Saturday<br>
@@ -60,16 +69,6 @@
             </div>
             <div class="col">
                 Sunday<br>
-                <i class="fas fa-sun"></i> <br>
-                64°F
-            </div>
-            <div class="col">
-                Monday<br>
-                <i class="fas fa-sun"></i> <br>
-                66°F
-            </div>
-            <div class="col">
-                Tuesday<br>
                 <i class="fas fa-sun"></i> <br>
                 68°F
             </div>
