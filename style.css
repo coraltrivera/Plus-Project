@@ -49,15 +49,6 @@ small {
   color: red;
 }
 
-.home input {
-  border: 1px solid rgb(197, 196, 196);
-  border-radius: 20px;
-  margin-top: 250px;
-  max-width: 100%;
-  padding: 10px 150px;
-  text-align: inherit;
-}
-
 input::placeholder {
   overflow: visible;
 }
@@ -91,8 +82,7 @@ img {
   text-align: inherit;
 }
 
-.new-search input:focus,
-.home input:focus {
+.new-search input:focus {
   outline: 0;
 }
 
@@ -128,4 +118,9 @@ img {
 
 #condition {
   text-transform: capitalize;
+}
+
+#forecast-min {
+  color: rgba(30, 30, 30, 0.587);
+  margin-left: 5px;
 }
