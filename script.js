@@ -28,14 +28,19 @@ function formatDate(timestamp){
   let date = new Date(timestamp);
   let fecha = date.getDate();
   let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
   let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
   return ` Last Updated ${day} ${month} ${fecha}, ${hours}:${minutes}, ${year}`;
-
 }
 
 function displayWeatherCondition(response){
@@ -56,6 +61,25 @@ function userCitySearch(event) {
   let city = document.querySelector("#city-input").value;
   search(city)
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function(day) {
+  forecastHTML = forecastHTML + `
+        <div class="col-2">
+          ${day} <br>
+          <i class="fas fa-cloud-sun"></i><br>
+          66°F
+        </div>`;  
+  })
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+ 
+}
+
+displayForecast();
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", userCitySearch);
