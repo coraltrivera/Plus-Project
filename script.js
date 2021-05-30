@@ -43,8 +43,14 @@ function formatDate(timestamp){
   return ` Last Updated ${day} ${month} ${fecha}, ${hours}:${minutes}, ${year}`;
 }
 
+function getForecast(coordinates){
+  let apiKey = "cd5e89045eaf1b6a2be7acb80a47437f";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayWeatherCondition(response){
-    console.log(response.data);
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#condition").innerHTML = response.data.weather[0].description;
@@ -54,6 +60,7 @@ function displayWeatherCondition(response){
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000)
+    getForecast(response.data.coord);
   }
 
 function userCitySearch(event) {
@@ -62,7 +69,8 @@ function userCitySearch(event) {
   search(city)
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -78,8 +86,6 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
  
 }
-
-displayForecast();
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", userCitySearch);
